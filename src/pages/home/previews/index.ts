@@ -64,12 +64,6 @@ const previews: Preview[] = [
     prior: true,
   },
   {
-    key: "flash",
-    exts: ["swf"],
-    component: lazy(() => import("./flash")),
-    prior: true,
-  },
-  {
     key: "markdown_with_word_wrap",
     type: ObjType.TEXT,
     component: lazy(() => import("./markdown_with_word_wrap")),
