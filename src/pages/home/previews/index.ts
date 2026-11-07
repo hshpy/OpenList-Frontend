@@ -45,16 +45,21 @@ export interface PreviewComponent {
 
 const previews: Preview[] = [
   {
-    key: "html",
-    exts: ["html"],
-    component: lazy(() => import("./html")),
+    key: "video",
+    type: ObjType.VIDEO,
+    component: lazy(() => import("./video")),
     prior: true,
   },
   {
-    key: "aliyun_video",
-    type: ObjType.VIDEO,
-    provider: /^Aliyundrive(Open)?$/,
-    component: lazy(() => import("./aliyun_video")),
+    key: "audio",
+    type: ObjType.AUDIO,
+    component: lazy(() => import("./audio")),
+    prior: true,
+  },
+  {
+    key: "html",
+    exts: ["html"],
+    component: lazy(() => import("./html")),
     prior: true,
   },
   {
@@ -88,18 +93,6 @@ const previews: Preview[] = [
     type: ObjType.IMAGE,
     exts: ["heic", "heif", "avif", "vvc", "avc"], // libheif
     component: lazy(() => import("./image")),
-    prior: true,
-  },
-  {
-    key: "video",
-    type: ObjType.VIDEO,
-    component: lazy(() => import("./video")),
-    prior: true,
-  },
-  {
-    key: "audio",
-    type: ObjType.AUDIO,
-    component: lazy(() => import("./audio")),
     prior: true,
   },
   {
@@ -147,12 +140,6 @@ const previews: Preview[] = [
     key: "asciinema",
     exts: ["cast"],
     component: lazy(() => import("./asciinema")),
-    prior: true,
-  },
-  {
-    key: "video360",
-    type: ObjType.VIDEO,
-    component: lazy(() => import("./video360")),
     prior: true,
   },
   {
